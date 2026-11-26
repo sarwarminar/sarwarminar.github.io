@@ -1,6 +1,9 @@
 name: Update Google Scholar statistics and publish site
 
 on:
+  push:
+    branches:
+      - main
   workflow_dispatch:
   schedule:
     - cron: '17 12 * * *'
