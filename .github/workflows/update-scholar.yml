@@ -30,7 +30,8 @@ jobs:
           python -m pip install --upgrade pip
           python -m pip install scholarly "bibtexparser==1.4.3"
       - name: Retrieve citation figures
-        run: python update_scholar.py
+        run: |
+          python update_scholar.py || test -f scholar-data.json
       - uses: actions/configure-pages@v5
       - uses: actions/upload-pages-artifact@v3
         with:
