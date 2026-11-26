@@ -842,7 +842,7 @@
       
 <!-- GOOGLE SCHOLAR STATISTICS: LIVE -->
 <div class="content-card"
-     style="grid-column:2; margin-bottom:12px; padding:16px 22px; max-width:520px; width:100%; justify-self:start;">
+     style="grid-column:2; width:100%; max-width:420px; justify-self:center; padding:14px 18px; margin-bottom:10px;">
 
 <h3 style="margin-bottom:10px; font-size:19px;">
     Google Scholar — Research Impact
@@ -887,12 +887,14 @@
       </div>
 
       <!-- ANNUAL CITATION BAR CHART -->
-      <div id="gs-yearly-chart"
-     style="display:flex; align-items:flex-end; gap:5px; height:110px; border-bottom:1px solid #ddd; margin-top:15px; padding-top:5px;">
+     <div id="gs-yearly-chart"
+     style="display:none; align-items:flex-end; gap:5px; height:90px; border-bottom:1px solid #ddd; margin-top:10px; padding-top:5px;">
       </div>
-      <p id="gs-updated"
-         style="font-size:12px; color:#666; margin:30px 0 10px;">
-      </p>
+
+   <p id="gs-updated"
+   style="font-size:11px; color:#666; margin:8px 0 5px;">
+    </p>
+
     </div>
   </div>
 
@@ -939,8 +941,9 @@
 
     const entries = Object.entries(d.citations_per_year)
       .sort((a, b) => Number(a[0]) - Number(b[0]));
-
-if (entries.length === 0) {
+if (entries.length > 0) {
+  chart.style.display = 'flex';
+} else {
   chart.style.display = 'none';
 }
 
