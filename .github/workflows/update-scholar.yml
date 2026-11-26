@@ -7,7 +7,6 @@ on:
   workflow_dispatch:
   schedule:
     - cron: '17 12 * * *'
-
 permissions:
   contents: read
   pages: write
@@ -31,8 +30,9 @@ jobs:
       - name: Install Scholar reader
         run: |
           python -m pip install --upgrade pip
-          python -m pip install scholarly "bibtexparser==1.4.3"
+          python -m pip install scholarly "bibtexparser==1.4.3"    
       - name: Retrieve citation figures
+        if: github.event_name != 'push'
         run: |
           python update_scholar.py || test -f scholar-data.json
       - uses: actions/configure-pages@v5
