@@ -243,21 +243,27 @@
     }
 
     section {
-      margin-bottom: 55px;
-      display: grid;
-      grid-template-columns: 210px 1fr;
-      gap: 28px;
-      align-items: start;
-      scroll-margin-top: 105px;
-    }
+  margin-bottom: 40px;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 16px;
+  align-items: start;
+  scroll-margin-top: 105px;
+}
+
+#publications > .content-card {
+  grid-column: 1 !important;
+  max-width: 100% !important;
+  justify-self: stretch !important;
+}
 
     .section-title {
-      font-size: 36px;
-      font-weight: 300;
-      line-height: 1.18;
-      color: #333;
-      margin: 0;
-    }
+  font-size: 30px;
+  font-weight: 600;
+  line-height: 1.25;
+  color: #183550;
+  margin: 0;
+}
 
     .content-card {
       background: #ffffff;
