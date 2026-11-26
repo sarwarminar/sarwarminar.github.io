@@ -460,6 +460,13 @@
   }
 }
 
+@media (max-width: 600px) {
+  #scholar-side-by-side {
+    grid-template-columns: 1fr !important;
+    gap: 20px !important;
+  }
+}
+
   </style>
 </head>
 
@@ -842,7 +849,8 @@
       
 <!-- GOOGLE SCHOLAR STATISTICS: LIVE -->
 <div class="content-card"
-     style="grid-column:2; width:100%; max-width:320px; justify-self:end; padding:10px 12px; margin-bottom:8px;"
+     style="grid-column:2; width:100%; max-width:650px; justify-self:end; padding:14px 18px; margin-bottom:10px;">
+
 
 <h3 style="margin-bottom:10px; font-size:19px;">
     Google Scholar — Research Impact
@@ -854,6 +862,9 @@
     </p>
 
     <div id="scholar-details" style="display:none;">
+
+    <div id="scholar-side-by-side"
+     style="display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:18px; align-items:center;">
 
       <div style="overflow-x:auto;">
     <table style="width:100%; border-collapse:collapse; font-size:14px; text-align:right; line-height:1.3;">
@@ -885,16 +896,17 @@
           </tbody>
         </table>
       </div>
+<!-- ANNUAL CITATION BAR CHART -->
+<div id="gs-yearly-chart"
+     style="display:none; align-items:flex-end; gap:4px; height:125px; border-bottom:1px solid #ddd; margin-top:8px; padding-top:5px;">
+</div>
 
-      <!-- ANNUAL CITATION BAR CHART -->
-     <div id="gs-yearly-chart"
-     style="display:none; align-items:flex-end; gap:5px; height:90px; border-bottom:1px solid #ddd; margin-top:10px; padding-top:5px;">
-      </div>
-
+</div> <!-- END SIDE-BY-SIDE LAYOUT -->
       <
 <p id="gs-updated"
-   style="font-size:10px; color:#666; margin:25px 0 8px; line-height:1.4;">
+   style="font-size:10px; color:#666; margin:18px 0 8px; line-height:1.4;">
 </p>
+
 
 
     </div>
